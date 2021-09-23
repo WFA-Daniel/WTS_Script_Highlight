@@ -1,0 +1,92 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "WTS test suite script",
+	"patterns": [
+        {
+            "include": "#strings"
+        },
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#parameters"
+		},
+        {
+            "include": "#comments"
+        }
+    ],
+	"repository": {
+        "operators": {
+            "patterns": [{
+                "name": "keyword.other.wts",
+                "match": "(!|,|\"|\\*|\/|:|;|\\?|\\^|\\+|<|=|>|,)"
+            }]
+        },
+		"keywords": {
+			"patterns": [{
+				"name": "entity.name.function.wts",
+				"match": "^[\\s]*(if|return|else|endif|or|and|sleep|math|echopause|define)"
+			},{
+				"name": "entity.name.function.wts",
+				"match": "(sniffer_|ca_get_version |traffic_agent_reset|traffic_send_ping traffic_stop_ping|ap_set_rfeature)\\w+"
+			},{
+				"name": "entity.name.function.wts",
+				"match": "(sta_|device_|dev_e|ap_|wfa_)\\w+"
+			},{
+				"name": "entity.name.function.wts",
+				"match": "(NoPacketsFound|NoFieldFound|FALSE|NULL|IS|AS|TRUE|FAIL|PASS|DEFAULT|ID)"
+			},{
+				"name": "entity.name.function.wts",
+				"match": "(framename|fieldname|nframes|SharedSecret|WiredIF|Reset|interface|startdelay|ackpolicy|passphrase|ssid|wfa_console_tg|dut_wireless_ip|actype|portnum|ackframe|channel|bandwidth|extnChnl|Program|Passphrase)"
+			}]
+		},
+		"parameters": {
+			"patterns": [{
+				"name": "variable.parameter.wts",
+				"match": "(\\$[\\w\\d]+)"
+			}]
+		},
+        "strings": {
+            "patterns": [{
+                "match": "^[\\s]*(r_info)(!)(PASS)(!)",
+                "captures": {
+                    "1": {"name": "entity.name.function.wts"},
+                    "2": {"name": "keyword.other.wts"},
+                    "3": {"name": "constant.language.wts"},
+                    "4": {"name": "keyword.other.wts"}
+                }
+            }, {
+                "match": "^[\\s]*(r_info)(!)(FAIL)(!)([^!]*)(!)",
+                "captures": {
+                    "1": {"name": "entity.name.function.wts"},
+                    "2": {"name": "keyword.other.wts"},
+                    "3": {"name": "constant.language.wts"},
+                    "4": {"name": "keyword.other.wts"},
+                    "5": {"name": "string.quoted.other.wts"},
+                    "6": {"name": "keyword.other.wts"}
+                }
+            }, {
+                "match": "^[\\s]*(info)(!)([^!]*)(!)",
+                "captures": {
+                    "1": {"name": "entity.name.function.wts"},
+                    "2": {"name": "keyword.other.wts"},
+                    "3": {"name": "string.quoted.other.wts"},
+                    "4": {"name": "keyword.other.wts"}
+                }
+            }]
+        },
+        "comments": {
+            "patterns": [{
+				"name": "comment.line.wts",
+				"begin": "#",
+                "end": "$"
+			}]
+        }
+	},
+	"scopeName": "source.txt"
+}
+
+

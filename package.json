@@ -1,0 +1,32 @@
+{
+    "name": "txt",
+    "displayName": "WTS",
+    "description": "WTS test suite script",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "wts",
+            "aliases": ["WTS test suite script", "wts"],
+            "extensions": [".txt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "wts",
+            "scopeName": "source.txt",
+            "path": "./syntaxes/wts.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "language": "wts",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
