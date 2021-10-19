@@ -12,12 +12,25 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
-    "Print to console": {
+    "if_endif": {
 		"prefix": "if",
 		"body": [
 			"if!${1}!!!\nendif!",
 		],
-		"description": "if!!!!\nendif!"
+		"description": "if_endif"
+	},
+    "if_else_endif": {
+		"prefix": "if",
+		"body": [
+			"if!${1}!!!\nelse!\nendif!",
+		],
+		"description": "if_else_endif"
+	},
+    "inv": {
+		"prefix": "inv",
+		"body": [
+			"_inv!\n${1}\ninv_!",
+		],
+		"description": "_inv_"
 	}
 }
