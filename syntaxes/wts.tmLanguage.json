@@ -43,7 +43,7 @@
 		"parameters": {
 			"patterns": [{
 				"name": "variable.parameter.wts",
-				"match": "(\\$[\\w\\d]+)"
+				"match": "(\\$[\\w\\d-]+)"
 			},{
                 "name": "variable.name.wts",
                 "match" : "(PingInternalChk|wfa_control_agent_[^PCE]\\w+_sta|wfa_control_agent_peraso_sta|wfa_control_agent_cypress_sta|\\w+_sta_wireless_ip|control_agent_testbed_sta[1-3]|control_agent_testbed_sta[1-3]_tspec|^testbed_sta[1-3]\\w*|injector_control_agent|wfa_control_agent_\\w+_ap|\\w+_ap_wireless_ip|wfa_control_agent_dut|wfa_control_agent_dut_2|dut_wireless_ip|dut_2_wireless_ip|(?!dut_(2_)?wireless_ip)Dut\\w+|APUT_\\w+|wfa_control_agent_\\w+_cntlr|wfa_control_agent_\\w+_agt|wfa_control_agent_\\w+_ctt|\\w+_ctt_wireless_ip|wfa_control_agent_atten|wfa_console_tg|wfa_console_ctrl|wfa_control_agent_PCE1_sta|wfa_control_agent_PCE2_sta|wfa_control_agent_PCE3_sta|wfa_sniffer\\d*|wfa_control_agent_capture_sta|wfa_control_agent_\\w+_osu|HostAPD\\w*|Microsoft\\w*|Radiator\\w*|RS\\d+\\w*|RADIUS\\d+\\w*|wfa_control_agent_radiusserver|^PowerSwitch\\w+|TestbedAPConfigServer|^WFAEMT\\w+|wfa_wfaemt_control_agent|^Atheros\\[^_]*AP\\w*|^Broadcom\\[^_]*AP\\w*|^Marvell\\[^_]*AP\\w*|^Ralink\\[^_]*AP\\w*|^Realtek[^_]*AP\\w*|^Ruckus[^_]*AP\\w*|^Ericsson[^_]*AP\\w*|^Cisco[^_]*AP\\w*|^Qualcomm\\[^_]*AP\\w*|^Aruba[^_]*AP\\w*|^Atheros[^_]*STA\\w*|^Broadcom[^_]*STA\\w*|^Marvell[^_]*STA\\w*|^Ralink[^_]*STA\\w*|^Intel[^_]*STA\\w*|^Mediatek[^_]*STA\\w*|^Qualcomm[^_]*STA\\w*|^Epson[^_]*STA\\w*|^Realtek[^_]*STA\\w*)"
